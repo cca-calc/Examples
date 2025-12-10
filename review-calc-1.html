@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Review</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+        ul ul {
+            list-style-type: circle;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .math-display {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Functions</h3>
+<ul>
+    <li>Definition of a real number.</li>
+    <li>What it means for a function to be one-to-one.</li>
+    <li>For each of the family of functions on page 32:
+        <ul>
+            <li>Their domain and range (review for \(ln(x)\)).</li>
+            <li>Their symmetry (odd, even, neither).</li>
+            <li>How they are affected by the operations on page 37 (shifting, stretching, reflecting).</li>
+            <li>Be able to obtain \((f \circ g)(x)\).</li>
+            <li>Their inverse function (review for \(e^x \Leftrightarrow ln(x)\)).</li>
+            <li>Know they are all continuous functions.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>Limits</h3>
+<ul>
+    <li>Vertical and horizontal asymptotes.</li>
+    <li>Limit Laws in Section 2.3.</li>
+    <li>Right and left handed limits.</li>
+    <li>Evaluate limits using direct substitution.</li>
+    <li>Evaluate limits using L'Hôpital's rule (methods to fit expressions into \(\frac{0}{0}\) or \(\frac{\infty}{\infty}\)).</li>
+</ul>
+
+<div align="center">
+<table>
+    <thead>
+        <tr>
+            <th>Indeterminate Form</th>
+            <th>How to Rewrite</th>
+            <th>Example Setup</th>
+            <th>Result after Rewriting</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>\(\frac{0}{0}\)</td>
+            <td>Already in quotient form</td>
+            <td>\(\lim_{x \to 0} \frac{\sin x}{x}\)</td>
+            <td>Apply L'Hôpital directly</td>
+        </tr>
+        <tr>
+            <td>\(\frac{\infty}{\infty}\)</td>
+            <td>Already in quotient form</td>
+            <td>\(\lim_{x \to \infty} \frac{x}{e^x}\)</td>
+            <td>Apply L'Hôpital directly</td>
+        </tr>
+        <tr>
+            <td>\(0 \cdot \infty\)</td>
+            <td>Rewrite as \(\frac{\ln x}{1/x}\) or similar</td>
+            <td>\(\lim_{x \to 0^+} x \ln x\)</td>
+            <td>Becomes \(\frac{\infty}{\infty}\)</td>
+        </tr>
+        <tr>
+            <td>\(\infty - \infty\)</td>
+            <td>Combine into single fraction (e.g. conjugate)</td>
+            <td>\(\lim_{x \to \infty} (\sqrt{x^2+1} - x)\)</td>
+            <td>Becomes \(\frac{0}{0}\)</td>
+        </tr>
+        <tr>
+            <td>\(0^0\)</td>
+            <td>Take logs: \(g(x)\ln f(x)\)</td>
+            <td>\(\lim_{x \to 0^+} x^x\)</td>
+            <td>Reduces to \(0 \cdot \infty\)</td>
+        </tr>
+        <tr>
+            <td>\(\infty^0\)</td>
+            <td>Take logs: \(g(x)\ln f(x)\)</td>
+            <td>\(\lim_{x \to \infty} (1+1/x)^x\)</td>
+            <td>Reduces to \(\frac{0}{0}\)</td>
+        </tr>
+        <tr>
+            <td>\(1^\infty\)</td>
+            <td>Take logs: \(g(x)\ln f(x)\)</td>
+            <td>\(\lim_{x \to \infty} (1+1/x)^x\)</td>
+            <td>Reduces to \(\frac{0}{0}\)</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<h3>Miscellaneous</h3>
+<ul>
+    <li>Intermediate Value Theorem</li>
+    <li>Squeeze Theorem</li>
+    <li>Extreme Value Theorem (page 281)</li>
+    <li>Definition of \(e\) (page 180)</li>
+</ul>
+
+<div class="math-display">
+$$\lim_{h \to 0} \frac{e^h - 1}{h} = 1$$
+</div>
+
+<h3>Derivatives</h3>
+<ul>
+    <li>Know these definitions</li>
+</ul>
+
+<div class="math-display">
+$$m = \lim_{x \to a} \frac{f(x) - f(a)}{x-a}$$
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
+</div>
+
+<ul>
+    <li>Table of differentiation formulas (p 189).</li>
+    <li>Table of trigonometric functions (p 194).</li>
+    <li>Chain rule.</li>
+    <li>Implicit differentiation.</li>
+    <li>Derivatives of exponential and logarithmic functions.</li>
+    <li>Derivatives of inverse trigonometric functions.</li>
+    <li>Definition of hyperbolic functions and their derivatives.</li>
+    <li>Derivatives of inverse hyperbolic functions.</li>
+</ul>
+
+<h3>Applications of Derivatives</h3>
+<ul>
+    <li>Equation of a tangent line of a function at \(P(a,f(a))\).</li>
+    <li>Equation of a normal to the tangent line of a function at \(P(a,f(a))\).</li>
+    <li>Know how to compute numerical derivative.</li>
+    <li>Definition of local min/max within an interval.</li>
+    <li>Increasing/Decreasing test (p 297).</li>
+    <li>Concavity test (p 300).</li>
+    <li>Second derivative test (p 302).</li>
+    <li>Relationship between x(t), v(t) and a(t) (position, velocity, acceleration)</li>
+</ul>
+
+<h3>Antiderivatives</h3>
+<ul>
+    <li>Definition of antiderivatives.</li>
+    <li>Solve for \(f\) given \(f'\)</li>
+    <li>Solve for \(f\) given \(f''\)</li>
+    <li>Use for</li>
+    <li>Solve for \(f\) given \(f'\) and/or \(f''\) and the constants given a set of conditions \(\{f(a)=b, f(c) = d ...\}\)</li>
+</ul>
+
+</body>
+</html>
